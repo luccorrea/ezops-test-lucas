@@ -27,5 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: ls -la
-    - run: cd ./chaves
-    - run: ls -la
+    - run: cd ./chaves && ls -la
