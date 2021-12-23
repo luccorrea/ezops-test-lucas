@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: ls -la
-    - run: cd ./chaves
+    - run: cd chaves
     - run: ls -la
     - run: ssh -i "linux.pem" ubuntu@ec2-54-210-135-141.compute-1.amazonaws.com
     - run: cd repositorio/
