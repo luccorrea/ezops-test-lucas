@@ -27,4 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: ls -la
-    - run: cd ./chaves && ls -la
+    - run: cd ./chaves && ls -la && ssh -i "linux.pem" ubuntu@ec2-54-210-135-141.compute-1.amazonaws.com && cd ./repositorio && cd ./ezops-test-lucas && git pull && pm2 restart chat-app
