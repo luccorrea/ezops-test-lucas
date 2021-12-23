@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd chaves
+    - run: cd ./chaves
     - run: ssh -i "linux.pem" ubuntu@ec2-54-210-135-141.compute-1.amazonaws.com
     - run: cd repositorio/
     - run: cd ezops-test-lucas/
