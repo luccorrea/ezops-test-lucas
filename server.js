@@ -43,6 +43,11 @@ app.post('/messages', async (req, res) => {
         await Message.remove({_id: censored.id})
       else
         io.emit('message', req.body);
+        if(message.message === "ezops"){
+          message.name = 'auto'  
+          message.message = 'resposta auto'
+          io.emit('message', message);
+        }  
       res.sendStatus(200);
   }
   catch (error){
