@@ -44,10 +44,22 @@
       $.get('http://localhost:3000/messages', (data) => {
         data.forEach(addMessages);
       })
+      $.get('http://ec2-54-210-135-141.compute-1.amazonaws.com:3000/messages', (data) => {
+        data.forEach(addMessages);
+      })
+      $.get('http://ec2-44-201-185-149.compute-1.amazonaws.com:3000/messages', (data) => {
+        data.forEach(addMessages);
+      })
+      $.get('http://ec2-3-92-237-163.compute-1.amazonaws.com:3000/messages', (data) => {
+        data.forEach(addMessages);
+      })
     }
 
     function sendMessage(message){
       $.post('http://localhost:3000/messages', message)
+      $.post('http://ec2-54-210-135-141.compute-1.amazonaws.com:3000/messages', message)
+      $.post('http://ec2-44-201-185-149.compute-1.amazonaws.com:3000/messages', message)
+      $.post('http://ec2-3-92-237-163.compute-1.amazonaws.com:3000/messages', message)
     }
 </script>
 </body>
