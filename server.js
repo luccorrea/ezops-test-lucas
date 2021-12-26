@@ -47,6 +47,8 @@ app.post('/messages', async (req, res) => {
           message.name = 'Bote'  
           message.message = 'resposta auto'
           io.emit('message', message);
+          savedMessage = await message.save()
+          console.log('saved');
         }  
       res.sendStatus(200);
   }
