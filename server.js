@@ -44,7 +44,7 @@ app.post('/messages', async (req, res) => {
       else
         io.emit('message', req.body);
         if(message.message === "teste"){
-          message.name = 'Bote'  
+          message.name = 'Bot'  
           message.message = 'resposta auto'
           io.emit('message', message);
           savedMessage = await message.save()
