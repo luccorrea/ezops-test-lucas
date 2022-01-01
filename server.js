@@ -36,7 +36,7 @@ app.post('/messages', async (req, res) => {
     var message = new Message(req.body);
 
     var savedMessage = await message.save()
-      console.log('saved');
+    console.log('saved');
 
     var censored = await Message.findOne({message:'badword'});
       if(censored)
@@ -44,10 +44,11 @@ app.post('/messages', async (req, res) => {
       else
         io.emit('message', req.body);
         if(message.message === "teste"){
-          message.name = 'Bot'  
-          message.message = 'resposta auto'
-          io.emit('message', message);
-          savedMessage = await message.save()
+          message_auto = new Message(req.body);
+          message_auto.name = 'Bot'  
+          message_auto.message = 'resposta auto'
+          await message_auto.save()
+          io.emit('message', message_auto);
           console.log('saved');
         }  
       res.sendStatus(200);
